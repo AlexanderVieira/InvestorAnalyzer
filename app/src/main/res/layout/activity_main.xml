@@ -34,7 +34,7 @@
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:hint="Entre com seu mome" android:id="@+id/textInputEdit" android:layout_marginLeft="10dp"
-        />
+                android:textColor="#5DA5E0"/>
     </android.support.design.widget.TextInputLayout>
     <Button
             android:text="@string/Iniciar"
