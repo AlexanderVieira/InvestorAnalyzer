@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
             fullName = textInputEdit.text.toString()
             val questionActivity = Intent(this, QuestionActivity::class.java)
+            questionActivity.putExtra("name", fullName)
             startActivity(questionActivity)
         }
     }
