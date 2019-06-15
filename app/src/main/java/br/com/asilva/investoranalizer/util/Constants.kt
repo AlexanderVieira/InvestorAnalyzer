@@ -52,3 +52,13 @@ const val OPTION_QUESTION_9_ALTERNATIVE_B = "De R$ 10.001 até R$ 100.000"
 const val OPTION_QUESTION_9_ALTERNATIVE_C = "De R$ 100.001 até R$ 500.000"
 const val OPTION_QUESTION_9_ALTERNATIVE_D = "De R$ 500.001 até R$ 1.000.000"
 const val OPTION_QUESTION_9_ALTERNATIVE_E = "Acima de R$ 1.000.001"
+
+const val CHOOSE_1 = 0
+const val CHOOSE_2 = 1
+const val CHOOSE_3 = 2
+const val CHOOSE_4 = 3
+const val CHOOSE_5 = 4
+const val CHOOSE_6 = 5
+const val CHOOSE_7 = 6
+const val CHOOSE_8 = 7
+const val CHOOSE_9 = 8

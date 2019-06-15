@@ -9,12 +9,16 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import br.com.asilva.investoranalizer.R
 import br.com.asilva.investoranalizer.models.Question
+import br.com.asilva.investoranalizer.util.*
 import kotlinx.android.synthetic.main.radio_button_fragment.*
 
 class RadioButtonFragment : Fragment() {
 
     private var currentQuestionIndex = 0
     private lateinit var radioButtonsList: List<Int>
+    private lateinit var imgViewRadioBtn: View
+    private var count = 0
+    private lateinit var imageList: List<Int>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -30,15 +34,31 @@ class RadioButtonFragment : Fragment() {
                                     radioButtonAlternative_c.id,
                                     radioButtonAlternative_d.id,
                                     radioButtonAlternative_e.id)
+
         configQuestion()
-    }
+     }
 
     fun configQuestion(){
         val arguments = arguments
         if (arguments != null){
             textViewQuestion.text = arguments.getString(STATEMENT_KEY)
             val options = arguments.getStringArray(OPTIONS_KEY)
+            var currentQuestion = textViewQuestion.text
+
+            when(currentQuestion){
+                QUESTION_1 -> imgViewRadioBtnFrag.setImageResource(R.drawable.investment_time)
+                QUESTION_2 -> imgViewRadioBtnFrag.setImageResource(R.drawable.multiplicar)
+                QUESTION_3 -> imgViewRadioBtnFrag.setImageResource(R.drawable.profissoes)
+                QUESTION_4 -> imgViewRadioBtnFrag.setImageResource(R.drawable.percentual)
+                QUESTION_5 -> imgViewRadioBtnFrag.setImageResource(R.drawable.manter_resgatar)
+                QUESTION_6 -> imgViewRadioBtnFrag.setImageResource(R.drawable.percentual)
+                QUESTION_7 -> imgViewRadioBtnFrag.setImageResource(R.drawable.estrategia_investimento)
+                QUESTION_8 -> imgViewRadioBtnFrag.setImageResource(R.drawable.renda_mensal)
+                else -> imgViewRadioBtnFrag.setImageResource(R.drawable.patrimonio)
+            }
+
             for (i in options.indices){
+
                 if (options.size == 3){
                     radioButtonAlternative_d.visibility = GONE
                     radioButtonAlternative_e.visibility = GONE
