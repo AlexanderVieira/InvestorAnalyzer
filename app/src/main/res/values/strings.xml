@@ -1,29 +1,15 @@
 <resources>
     <string name="app_name">InvestorAnalyzer</string>
 
-    <string name="question_1">Por quanto tempo você pretende deixar seu dinheiro investido?</string>
-    <string name="question_2">Qual o objetivo desse investimento?</string>
-
-   <string-array name="choices_question_1">
-        <item>Menos de 6 meses</item>
-        <item>Entre 6 meses e 1 ano</item>
-        <item>Entre 1 ano e 3 anos</item>
-        <item>Acima de 3 anos</item>
-    </string-array>
-
-    <string-array name="choices_question_2">
-        <item>Preservação do capital para não perder valor ao longo do tempo,assumindo baixos riscos de perdas</item>
-        <item>Aumento gradual do capital ao longo do tempo, assumindo riscos moderados</item>
-        <item>Aumento do capital acima da taxa de retorno média do mercado, mesmo que isso implique assumir riscos de perdas elevadas</item>
-        <item>Obter no curto prazo retornos elevados e significativos</item>
-    </string-array>
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title">InvestorAnalyzer Analisador de Perfil de Investidores</string>
+    <string name="title">Analisador de Perfil de Investidores</string>
     <string name="fullName">Entre com seu nome completo</string>
     <string name="Iniciar">Iniciar Análise</string>
     <string name="btnProximo">Próxima</string>
     <string name="question">question</string>
+    <string name="credito_grupo_paulista">Crédito para o Grupo Paulista:
+        https://www.bancopaulista.com.br/Arquivos/QuestionarioAPI.pdf
+    </string>
 
 </resources>

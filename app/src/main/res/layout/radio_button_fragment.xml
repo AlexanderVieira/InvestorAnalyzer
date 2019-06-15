@@ -46,12 +46,14 @@
                 android:layout_height="wrap_content" android:id="@+id/radioButtonAlternative_d"
                 android:layout_weight="1"
                 android:layout_marginBottom="8dp" android:textSize="14sp"
-                android:textColor="@android:color/background_light"/>
+                android:textColor="@android:color/background_light"
+                android:visibility="visible"/>
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/radioButtonAlternative_e"
                 android:layout_weight="1"
                 android:layout_marginBottom="8dp" android:textSize="14sp"
-                android:textColor="@android:color/background_light"/>
+                android:textColor="@android:color/background_light"
+                android:visibility="visible"/>
     </RadioGroup>
 </android.support.constraint.ConstraintLayout>

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
 import android.widget.RadioButton
 import br.com.asilva.investoranalizer.R
@@ -12,25 +13,17 @@ import kotlinx.android.synthetic.main.radio_button_fragment.*
 
 class RadioButtonFragment : Fragment() {
 
-    //private lateinit var radioButtonViewModel: RadioButtonViewModel
+    private var currentQuestionIndex = 0
     private lateinit var radioButtonsList: List<Int>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        //return super.onCreateView(inflater, container, savedInstanceState)
-        /*activity?.let {
-            radioButtonViewModel = ViewModelProviders
-                .of(it)
-                .get(RadioButtonViewModel::class.java)
-        }*/
+
         return inflater.inflate(R.layout.radio_button_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        /*radioButtonViewModel.addRadionButtonQuestion()
-        subscribe()*/
 
         radioButtonsList = listOf(radioButtonAlternative_a.id,
                                     radioButtonAlternative_b.id,
@@ -46,7 +39,17 @@ class RadioButtonFragment : Fragment() {
             textViewQuestion.text = arguments.getString(STATEMENT_KEY)
             val options = arguments.getStringArray(OPTIONS_KEY)
             for (i in options.indices){
-                activity?.findViewById<RadioButton>(radioButtonsList[i])?.text = options[i]
+                if (options.size == 3){
+                    radioButtonAlternative_d.visibility = GONE
+                    radioButtonAlternative_e.visibility = GONE
+                    activity?.findViewById<RadioButton>(radioButtonsList[i])?.text = options[i]
+                }else if (options.size == 4){
+                    radioButtonAlternative_e.visibility = GONE
+                    activity?.findViewById<RadioButton>(radioButtonsList[i])?.text = options[i]
+                }else{
+
+                    activity?.findViewById<RadioButton>(radioButtonsList[i])?.text = options[i]
+                }
             }
         }
     }
@@ -64,17 +67,5 @@ class RadioButtonFragment : Fragment() {
             return radioButtonFrag
         }
     }
-
-    /*private fun subscribe(){
-        radioButtonViewModel.currencyStatement.observe(this,
-            Observer{
-                it?.let { textViewQuestionId.text = "$it" }
-            })
-        radioButtonViewModel.currencyOption.observe(this,
-            Observer {
-                it?.let {  }
-            }
-        )
-    }*/
 
 }
